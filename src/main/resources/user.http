@@ -1,0 +1,2 @@
+### GET request with environment variables
+GET {{host}}/api/v1/user/all
