@@ -1,2 +1,19 @@
 ### GET request with environment variables
 GET {{host}}/api/v1/user/all
+
+### GET request with environment variables
+GET {{host}}/api/v1/consume/user
+
+### GET user by emailId
+GET {{host}}/api/v1/user/?emailId={{emailId}}
+
+### POST add user into system
+POST {{host}}/api/v1/user/
+Content-Type: application/json
+
+{
+  "firstname": "firstname",
+  "emailId": "some.user@email.com",
+  "lastname": "user",
+  "updatedBy": "app"
+}

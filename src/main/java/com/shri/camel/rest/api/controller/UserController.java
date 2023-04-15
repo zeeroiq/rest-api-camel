@@ -2,13 +2,12 @@ package com.shri.camel.rest.api.controller;
 
 import com.shri.camel.rest.api.model.User;
 import com.shri.camel.rest.api.service.UserService;
+import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -23,6 +22,18 @@ public class UserController {
     @GetMapping(value = "/all", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<List<User>> listAll() {
         return new ResponseEntity<>(userService.findAll(), HttpStatus.OK);
+    }
+
+    @GetMapping(value = "/", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> userByMailId(@NotNull @RequestParam("emailId") String emailId) {
+        return new ResponseEntity<>(userService.findUserByEmailId(emailId), HttpStatus.OK);
+    }
+
+    @PostMapping(value = "/",
+            produces = MediaType.APPLICATION_JSON_VALUE,
+            consumes = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<User> userByMailId(@NotNull @RequestBody User user) {
+        return new ResponseEntity<>(userService.addUser(user), HttpStatus.OK);
     }
 
 }

@@ -1,8 +1,11 @@
 package com.shri.camel.rest.api.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
+import lombok.AccessLevel;
 import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.annotations.Parameter;
@@ -11,13 +14,15 @@ import org.hibernate.annotations.UpdateTimestamp;
 import java.io.Serializable;
 import java.sql.Timestamp;
 
+@JsonIgnoreProperties(value = {"serialVersionUID", "password"})
 @Data
 @Entity
 @Table(name = "user_entity", schema = "schema_test")
 public class User implements Serializable {
 
     @Transient
-    @JsonIgnore
+    @Getter(AccessLevel.NONE)
+    @Setter(AccessLevel.NONE)
     private final long serialVersionUID = 3303186845908654414L;
 
     @Id

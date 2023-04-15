@@ -8,4 +8,7 @@ import java.util.Optional;
 public interface UserService {
     Optional<User> findUserById(Long id);
     List<User> findAll();
+    User findUserByEmailId(String emailId);
+
+    User addUser(User user);
 }
