@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @IgnoreDuringScan
 @Slf4j
 @RequiredArgsConstructor
-@Component
+//@Component
 public class UserConsumerRoute extends RouteBuilder {
 
     private final DemoComponentBeans demoComponentBeans;
