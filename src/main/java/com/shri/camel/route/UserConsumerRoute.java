@@ -2,11 +2,13 @@ package com.shri.camel.route;
 
 import com.shri.camel.rest.api.component.DemoComponentBeans;
 import com.shri.camel.rest.api.component.SimpleLoggingProcessingComponent;
+import com.shri.camel.rest.util.annotations.IgnoreDuringScan;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.camel.builder.RouteBuilder;
 import org.springframework.stereotype.Component;
 
+@IgnoreDuringScan
 @Slf4j
 @RequiredArgsConstructor
 @Component
