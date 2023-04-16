@@ -1,3 +1,8 @@
+/***********************************************************************************************************************************************************
+ ** Created By zeeroiq on 4/17/23, 12:07 AM.
+ ** Copyright (c) ZeeroIQ
+ *********************************************************************************************************************************************************/
+
 package com.shri.camel.route;
 
 import com.shri.camel.rest.api.component.DemoComponentBeans;
@@ -11,7 +16,7 @@ import org.springframework.stereotype.Component;
 @IgnoreDuringScan
 @Slf4j
 @RequiredArgsConstructor
-//@Component
+@Component
 public class UserConsumerRoute extends RouteBuilder {
 
     private final DemoComponentBeans demoComponentBeans;
